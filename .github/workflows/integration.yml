@@ -1,0 +1,27 @@
+name: Vue Test
+on: pull_request
+
+jobs:
+  build:
+    name: TutHub-Page Test
+    runs-on: ubuntu-22.04
+    container:
+      image: node:18
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: npm install
+        run: npm install
+
+      - name: vitest
+        run: npm run test:unit
+
+      - name: type-check
+        run: npm run type-check
+
+      - name: lint
+        run: npm run lint
+
+      - name: build
+        run: npm run build-only
