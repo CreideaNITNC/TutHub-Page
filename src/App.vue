@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+
+import { useService } from "@/service/service";
+
+const service = useService();
 </script>
 
 <template>
@@ -15,7 +19,8 @@ import HelloWorld from "./components/HelloWorld.vue";
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
+      <h1 class="service">{{ service.loadData() }}</h1>
+      <button>Hello</button>
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -26,10 +31,16 @@ import HelloWorld from "./components/HelloWorld.vue";
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/variables.scss";
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+.service {
+  color: $hello;
 }
 
 .logo {
