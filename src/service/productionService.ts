@@ -1,8 +1,9 @@
 import type { Service } from "@/service/service";
+import type TutorialPageData from "@/models/data/tutorialPageData";
 
 class ProductionService implements Service {
-  loadData(): string {
-    return "world";
+  async loadData(): Promise<TutorialPageData> {
+    throw new Error("未実装");
   }
 }
 
