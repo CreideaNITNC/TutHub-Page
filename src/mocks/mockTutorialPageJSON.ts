@@ -19,7 +19,7 @@ const mockTutorialPageJSON: TutorialPageJSON = {
 [Vapor]は今最も主力なServer-Side Swiftのフレームワークです。基本的な機能は網羅し、Documentも英語ですが、マイナーなサーバーサイドフレームワークの中ではかなりしっかりと整備されています。`,
 
       codes: [],
-      images: [
+      pictures: [
         { filename: "vapor_logo.png", encodedBinaryData: image.vapor_logo },
       ],
     },
@@ -28,7 +28,7 @@ const mockTutorialPageJSON: TutorialPageJSON = {
       message: `# Xcodeのインストール
 AppStoreやAppleのDevelopサイトからXcodeをインストールします。`,
       codes: [],
-      images: [
+      pictures: [
         {
           filename: "appstore_xcode.png",
           encodedBinaryData: image.appstore_xcode,
@@ -42,7 +42,7 @@ XcodeをインストールしたらSwiftが使用可能であることを確認�
 ターミナルを開き、versionを確認するコマンドで確認してみてください。
 5.6辺りのバージョンがインストールされていると思います。`,
       codes: [code.terminal_swift_version.code],
-      images: [
+      pictures: [
         {
           filename: "swift_version.png",
           encodedBinaryData: image.swift_version,
@@ -55,14 +55,14 @@ XcodeをインストールしたらSwiftが使用可能であることを確認�
 Homebrewをインストールされていない方は[Homebrewの公式サイト](https://brew.sh/index_ja)に従ってインストールしてださい
 Homebrewを使用してvaporをインストールします。`,
       codes: [code.terminal_install_vapor.code],
-      images: [],
+      pictures: [],
     },
     {
       step: 5,
       message: `# Vaporの確認
 バージョンを見てVaporが無事インストールできたことを確認します。`,
       codes: [code.terminal_vapor_version.code],
-      images: [
+      pictures: [
         {
           filename: "vapor_version.png",
           encodedBinaryData: image.vapor_version,
@@ -74,7 +74,7 @@ Homebrewを使用してvaporをインストールします。`,
       message: `# プロジェクトの作成
 ターミナルにvaporのnewコマンドで、vaporプロジェクトを作成します。newの後にはプロジェクト名を入れます。`,
       codes: [code.terminal_vapor_new.code],
-      images: [
+      pictures: [
         {
           filename: "vapor_new.png",
           encodedBinaryData: image.vapor_new,
@@ -89,7 +89,7 @@ Homebrewを使用してvaporをインストールします。`,
 実行すると、Xcodeが起動し、プロジェクトが開かれると思います。
 開いた後は、依存ライブラリのダウンロードなどのため少々時間がかかると思います。`,
       codes: [code.terminal_open_xcode.code],
-      images: [
+      pictures: [
         {
           filename: "open_xcode.png",
           encodedBinaryData: image.open_xcode,
@@ -101,7 +101,7 @@ Homebrewを使用してvaporをインストールします。`,
       message: `# プロジェクトの実行
 Xcodeの左上の三角形のRunボタンを押します。するとbuildが始まって、しばらくするとBuild Succeedと表示が一瞬でます。その後、指紋マークが出るので指紋認証やパスワードで承認してください。`,
       codes: [],
-      images: [
+      pictures: [
         {
           filename: "xcode_password_permission.png",
           encodedBinaryData: image.xcode_password_permission,
@@ -114,7 +114,7 @@ Xcodeの左上の三角形のRunボタンを押します。するとbuildが始�
 実行して少し待つと左下にWarningとNoticeの表示が出ます。http://127.0.0.1:8080をSafariなどのブラウザで検索して見てください。
 It works!と表示されると思います。`,
       codes: [code.terminal_warning_notice.code],
-      images: [
+      pictures: [
         {
           filename: "browser_it_works.png",
           encodedBinaryData: image.browser_it_works,
@@ -126,7 +126,7 @@ It works!と表示されると思います。`,
       message: `# ターミナルでのサーバーへのリクエスト
 ターミナルからサーバーが起動していることを確認することもできます。curlコマンドでリクエストを送ってみてください。It works!と表示が出ると思います。`,
       codes: [code.terminal_curl_it_works.code],
-      images: [],
+      pictures: [],
     },
     {
       step: 10,
@@ -138,7 +138,7 @@ Xcode上のVaporTwitterを押して、Edit Schemaを選択します。
 # Use custom working directory
 OptionのUse custom working directoryにチェックを入れてディレクトリをこのプロジェクトディレクトリ直下に指定します。`,
       codes: [code.terminal_curl_it_works.code],
-      images: [
+      pictures: [
         {
           filename: "warning1.png",
           encodedBinaryData: image.warning1_edit_schema,
@@ -160,7 +160,7 @@ OptionのUse custom working directoryにチェックを入れてディレクト�
       message: `# Warningの解消の確認
 Xcodeの実行を止めて再実行するとWarningが消えていると思います。`,
       codes: [],
-      images: [
+      pictures: [
         {
           filename: "without_warning_run_serve.png",
           encodedBinaryData: image.without_warning_run_serve,

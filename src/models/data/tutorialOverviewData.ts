@@ -9,6 +9,9 @@ export default class TutorialOverviewData {
   public static readonly decode = (
     json: TutorialOverViewJSON
   ): TutorialOverviewData => {
-    return new TutorialOverviewData(json.message, json.encodedBinaryImageData);
+    return new TutorialOverviewData(
+      json.message,
+      json.encodedBinaryPictureData
+    );
   };
 }
