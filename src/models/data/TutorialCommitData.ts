@@ -7,8 +7,8 @@ export default class TutorialCommitData {
   public constructor(
     public readonly step: number,
     public readonly descriptions: DescriptionData[],
-    private readonly codes: SourceCodeData[],
-    private readonly pictures: PictureData[]
+    public readonly codes: SourceCodeData[],
+    public readonly pictures: PictureData[]
   ) {}
 
   public static readonly decode = (

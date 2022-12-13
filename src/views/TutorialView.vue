@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
 import { useService } from "@/service/service";
+import TutorialPage from "@/components/TutorialPage/TutorialPage.vue";
 
 const router = useRouter();
 
@@ -15,9 +16,7 @@ console.log(page);
 
 <template>
   <div class="tutorial">
-    <h1>Tutorial page</h1>
-    <p>{{ user }}</p>
-    <p>{{ repository }}</p>
+    <TutorialPage :page="page" />
   </div>
 </template>
 
