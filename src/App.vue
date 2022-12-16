@@ -3,19 +3,24 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <RouterView />
+  <div class="app">
+    <Suspense>
+      <RouterView />
+    </Suspense>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @import "@/assets/variables.scss";
 
+.app {
+  font-family: SF Pro Display, system-ui, -apple-system, BlinkMacSystemFont,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
-
-.service {
-  color: $hello;
 }
 
 .logo {

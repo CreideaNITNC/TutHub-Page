@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check build-only",
+    "build": "run-p type-check buisecondld-only",
     "preview": "vite preview",
     "test:unit": "vitest --environment jsdom --root src/",
     "test:e2e": "start-server-and-test preview :4173 'cypress run --e2e'",
@@ -14,13 +14,18 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
+    "ress": "^5.0.2",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-prism-editor": "^2.0.0-alpha.2",
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.0.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.9",
+    "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
@@ -33,6 +38,8 @@
     "jsdom": "^20.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
+    "prism-core": "^2.0.2",
+    "prismjs": "^1.29.0",
     "sass": "^1.56.1",
     "start-server-and-test": "^1.14.0",
     "typescript": "~4.7.4",

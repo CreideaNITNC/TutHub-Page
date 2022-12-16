@@ -1,8 +1,10 @@
 import type { Service } from "@/service/service";
+import TutorialPageData from "@/models/data/tutorialPageData";
+import mockTutorialPageJSON from "@/mocks/mockTutorialPageJSON";
 
 class DevelopService implements Service {
-  loadData(): string {
-    return "hello";
+  async loadData(): Promise<TutorialPageData> {
+    return TutorialPageData.decode(mockTutorialPageJSON);
   }
 }
 
