@@ -3,8 +3,9 @@ import type { PropType } from "vue";
 import type TutorialCommitData from "@/models/data/TutorialCommitData";
 import type PictureData from "@/models/data/pictureData";
 import type SourceCodeData from "@/models/data/sourceCodeData";
+import { computed } from "vue";
 
-const props = defineProps({
+defineProps({
   commits: {
     type: Object as PropType<readonly TutorialCommitData[]>,
     required: true,
@@ -30,8 +31,9 @@ const onIntersect = (
     emit("update:pictures", pictures);
     emit("update:codes", codes);
   }
-  console.log(step, isIntersecting);
 };
+
+const width = computed(() => (window.innerWidth * 0.25).toString());
 </script>
 
 <template>
@@ -52,18 +54,24 @@ const onIntersect = (
     <div v-for="description in commit.descriptions" :key="description.title">
       <v-card
         class="card"
-        width="400"
+        :width="width"
         :title="description.title"
         :text="description.text"
-      ></v-card>
+      />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/variables.scss";
 .step {
   .card {
     margin-bottom: 30px;
+    background-color: $partColor;
+    color: white;
+    position: relative;
+
+    border-left: 5px solid rgb(125, 193, 255);
   }
   margin-top: 20vh;
 }

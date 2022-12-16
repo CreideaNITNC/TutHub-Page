@@ -1,9 +1,17 @@
 import type { Service } from "@/service/service";
-import type TutorialPageData from "@/models/data/tutorialPageData";
+import TutorialPageData from "@/models/data/tutorialPageData";
 
 class ProductionService implements Service {
-  async loadData(): Promise<TutorialPageData> {
-    throw new Error("未実装");
+  async loadData(
+    user: string,
+    repository: string,
+    page: number
+  ): Promise<TutorialPageData> {
+    const response = await fetch(
+      `https://tuthub.top/page/${user}/${repository}/${page}`
+    );
+    const jsonObject = await response.json();
+    return TutorialPageData.decode(jsonObject);
   }
 }
 

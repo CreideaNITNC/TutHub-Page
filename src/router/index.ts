@@ -6,7 +6,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/:user/:repository",
+      path: "/:user/:repository/:page",
       name: "tutorial",
       component: TutorialView,
     },

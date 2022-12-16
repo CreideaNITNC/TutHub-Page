@@ -20,9 +20,6 @@ jobs:
       - name: vitest
         run: npm run test:unit
 
-      - name: type-check
-        run: npm run type-check
-
       - name: lint
         run: npm run lint
 

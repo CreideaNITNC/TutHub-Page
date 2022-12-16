@@ -7,16 +7,16 @@ const router = useRouter();
 
 const user = router.currentRoute.value.params["user"] as string;
 const repository = router.currentRoute.value.params["repository"] as string;
+const page = Number(router.currentRoute.value.params["page"]);
 
 const service = useService();
 
-const page = await service.loadData();
-console.log(page);
+const pageData = await service.loadData(user, repository, page);
 </script>
 
 <template>
   <div class="tutorial">
-    <TutorialPage :page="page" />
+    <TutorialPage :page="pageData" />
   </div>
 </template>
 

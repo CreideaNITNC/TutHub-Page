@@ -28,7 +28,7 @@ const highlighter = computed(() => {
 
 <template>
   <prism-editor
-    class="my-editor"
+    class="code-preview"
     :model-value="source.code"
     :highlight="highlighter"
     readonly
@@ -39,20 +39,16 @@ const highlighter = computed(() => {
 
 <style>
 /* required class */
-.my-editor {
+.code-preview {
   /* we dont use `language-` classes anymore so thats why we need to add background and text color manually */
   background: #2d2d2d;
   color: #ccc;
+  height: 100%;
 
   /* you must provide font-family font-size line-height. Example: */
   font-family: Fira code, Fira Mono, Consolas, Menlo, Courier, monospace;
   font-size: 14px;
   line-height: 1.5;
   padding: 5px;
-}
-
-/* optional class for removing the outline */
-.prism-editor__textarea:focus {
-  outline: none;
 }
 </style>

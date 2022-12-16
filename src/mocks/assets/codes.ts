@@ -39,6 +39,14 @@ export const terminal_open_xcode = new SourceCode("terminal.sh", [
   { isDifference: true, line: "open Package.swift" },
 ]);
 
+export const routes_swift = new SourceCode("route.swift", [
+  { isDifference: true, line: "func route(_ app: Application) {" },
+  { isDifference: true, line: "\tapp.get { req in" },
+  { isDifference: true, line: '\t\t"Hello, World"' },
+  { isDifference: true, line: "\t}" },
+  { isDifference: true, line: "}" },
+]);
+
 export const terminal_warning_notice = new SourceCode("terminal.sh", [
   {
     isDifference: true,

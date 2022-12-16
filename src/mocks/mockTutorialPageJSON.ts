@@ -41,7 +41,7 @@ AppStoreやAppleのDevelopサイトからXcodeをインストールします。`
 XcodeをインストールしたらSwiftが使用可能であることを確認しておきます。
 ターミナルを開き、versionを確認するコマンドで確認してみてください。
 5.6辺りのバージョンがインストールされていると思います。`,
-      codes: [code.terminal_swift_version.code],
+      codes: [code.terminal_swift_version.code, code.routes_swift.code],
       pictures: [
         {
           filename: "swift_version.png",
