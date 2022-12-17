@@ -1,7 +1,7 @@
 export default class Filename {
   public constructor(public readonly filename: string) {}
 
-  private readonly extension = (): string => {
+  public readonly extension = (): string => {
     const separated = this.filename.split(".");
     if (separated.length <= 1) return "";
     return separated[separated.length - 1];
