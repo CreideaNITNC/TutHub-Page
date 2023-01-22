@@ -4,9 +4,24 @@ import { RouterView } from "vue-router";
 
 <template>
   <div class="app">
-    <Suspense>
-      <RouterView />
-    </Suspense>
+    <router-view v-slot="{ Component }">
+      <suspense timeout="0">
+        <template #default>
+          <component :is="Component" :key="$route.path"></component>
+        </template>
+        <template #fallback>
+          <div class="progress-container">
+            <v-progress-circular
+              color="blue-lighten-3"
+              model-value="20"
+              :size="72"
+              :width="9"
+              indeterminate
+            />
+          </div>
+        </template>
+      </suspense>
+    </router-view>
   </div>
 </template>
 
@@ -26,6 +41,14 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.progress-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
