@@ -3,6 +3,7 @@ import type { PropType } from "vue";
 import type PictureData from "@/models/data/pictureData";
 import { computed } from "vue";
 import UnitTutorialImage from "@/components/tutorial/TutorialImage/UnitTutorialImage/UnitTutorialImage.vue";
+import MultipleTutorialImage from "@/components/tutorial/TutorialImage/MultipleTutorialImage/MultipleTutorialImage.vue";
 
 const innerWidth = computed(() => (window.innerWidth * 0.3).toString());
 
@@ -21,22 +22,7 @@ defineProps({
       <UnitTutorialImage :picture="pictures[0]" />
     </div>
     <div class="pictures-container" v-else>
-      <v-window class="window" show-arrows>
-        <!--TODO: 後で自作する -->
-        <v-window-item
-          v-for="picture in pictures"
-          class="item"
-          :key="picture.filename"
-        >
-          <img
-            :src="picture.src"
-            :alt="picture.filename"
-            class="bg-white image"
-            :width="innerWidth"
-          />
-          <!--          <v-img class="bg-white image" width="500" cover :src="picture.src" />-->
-        </v-window-item>
-      </v-window>
+      <MultipleTutorialImage :pictures="pictures" />
     </div>
   </div>
 </template>
