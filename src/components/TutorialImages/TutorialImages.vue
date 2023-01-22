@@ -2,6 +2,7 @@
 import type { PropType } from "vue";
 import type PictureData from "@/models/data/pictureData";
 import { computed } from "vue";
+import UnitTutorialImage from "@/components/tutorial/TutorialImage/UnitTutorialImage/UnitTutorialImage.vue";
 
 const innerWidth = computed(() => (window.innerWidth * 0.3).toString());
 
@@ -17,14 +18,7 @@ defineProps({
   <div class="tutorial-images">
     <div v-if="pictures.length === 0"></div>
     <div v-else-if="pictures.length === 1">
-      <img
-        v-for="picture in pictures"
-        :key="picture.filename"
-        class="bg-white image"
-        :width="innerWidth"
-        :src="picture.src"
-        :alt="picture.filename"
-      />
+      <UnitTutorialImage :picture="pictures[0]" />
     </div>
     <div class="pictures-container" v-else>
       <v-window class="window" show-arrows>
