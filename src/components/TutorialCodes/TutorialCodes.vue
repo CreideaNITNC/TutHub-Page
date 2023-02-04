@@ -57,7 +57,7 @@ const tab = ref(null);
 
   .card {
     width: 100%;
-    height: 100%;
+    height: 90%;
 
     .window {
       width: 100%;
