@@ -8,7 +8,7 @@ class ProductionService implements Service {
     page: number
   ): Promise<TutorialPageData> {
     const response = await fetch(
-      `https://tuthub.top/page/${user}/${repository}/${page}`
+      `https://tuthub-api.top/page/${user}/${repository}/${page}`
     );
     const jsonObject = await response.json();
     return TutorialPageData.decode(jsonObject);

@@ -32,11 +32,13 @@ const codes = ref<readonly SourceCodeData[]>([]);
           v-model:codes="codes"
         />
       </div>
-      <div class="sources-container">
-        <TutorialCodes :codes="codes" />
-      </div>
-      <div class="pictures-container">
-        <TutorialImage :pictures="pictures" />
+      <div class="static-contents-container">
+        <div class="sources-container" v-if="codes.length > 0">
+          <TutorialCodes :codes="codes" />
+        </div>
+        <div class="picture-container" v-if="pictures.length > 0">
+          <TutorialImage class="image" :pictures="pictures" />
+        </div>
       </div>
     </div>
   </div>
@@ -81,12 +83,31 @@ const codes = ref<readonly SourceCodeData[]>([]);
       width: 20vw;
     }
 
-    & > .sources-container {
+    & > .static-contents-container {
       position: fixed;
-      width: 30vw;
+      right: 5vw;
+      top: 15vh;
+
+      width: 60vw;
       height: 80vh;
-      left: 33vw;
-      top: 12vh;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      & > .sources-container {
+        height: 100%;
+        width: 50%;
+        flex-grow: 1;
+        padding: 5px;
+      }
+
+      & > .picture-container {
+        padding: 5px;
+        height: 100%;
+        width: 50%;
+        flex-grow: 1;
+      }
     }
 
     & > .pictures-container {
@@ -96,6 +117,7 @@ const codes = ref<readonly SourceCodeData[]>([]);
       height: 70vh;
       left: 65vw;
       top: 10vw;
+
       & > .pictures {
         position: absolute;
         left: 50%;
