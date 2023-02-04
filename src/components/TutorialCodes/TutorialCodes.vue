@@ -55,17 +55,18 @@ const tab = ref(null);
     }
   }
 
-  & > .card {
+  .card {
     width: 100%;
     height: 100%;
 
-    & > .window {
+    .window {
       width: 100%;
       height: 100%;
 
-      & > .item {
+      .item {
         width: 100%;
         height: 100%;
+        overflow: scroll;
       }
     }
   }
