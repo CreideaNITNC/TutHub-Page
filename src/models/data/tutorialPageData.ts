@@ -7,6 +7,7 @@ export default class TutorialPageData {
   private constructor(
     public readonly userID: string,
     public readonly repositoryName: string,
+    public readonly repositoryTitle: string,
     public readonly commits: readonly TutorialCommitData[],
     public readonly nextTutorialOverView?: TutorialOverviewData
   ) {}
@@ -22,6 +23,7 @@ export default class TutorialPageData {
     return new TutorialPageData(
       data.userID,
       data.repositoryName,
+      data.repositoryTitle,
       data.commits.map((commit) => TutorialCommitData.decode(commit)),
       this.decodeNext(data.next)
     );

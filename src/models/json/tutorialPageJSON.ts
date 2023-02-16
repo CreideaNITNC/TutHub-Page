@@ -4,6 +4,7 @@ import type TutorialOverViewJSON from "@/models/json/tutorialOverViewJSON";
 export default interface TutorialPageJSON {
   userID: string;
   repositoryName: string;
+  repositoryTitle: string;
   /** 章番号 */
   pageNumber: number;
   /** 章タイトル */
