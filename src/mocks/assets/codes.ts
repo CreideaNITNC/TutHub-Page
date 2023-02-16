@@ -61,3 +61,81 @@ export const terminal_warning_notice = new SourceCode("terminal.sh", [
 export const terminal_curl_it_works = new SourceCode("terminal.sh", [
   { isDifference: true, line: "curl http://127.0.0.1:8080" },
 ]);
+
+export const long = {
+  filename: "long.c",
+  lines: [],
+  code: `#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    char name[100];
+    char furi[100];
+    int koku;
+    int san;
+    int rika;
+    int shakai;
+    int total;
+} STUDENT;
+
+void sort(STUDENT class[], int n) {
+    /* 中身を作る */
+}
+
+int main(int argc, char **argv) {
+    STUDENT class[50];
+    FILE *fp;
+    int i, j;
+    if ((fp = fopen(argv[1], "r")) == NULL) {
+        perror(argv[1]);
+        exit(1);
+    }
+
+    i = 0;
+    while (fscanf(
+            fp, "%s%s%d%d%d%d",
+            class[i].name,
+            class[i].furi,
+            &class[i].koku,
+            &class[i].san,
+            &class[i].rika,
+            &class[i].shakai
+    ) != EOF) {
+        i++;
+    }
+
+    j = 0;
+    while (j < i) {
+        class[j].total = class[j].koku + class[j].san + class[j].rika + class[j].shakai;
+        j++;
+    }
+
+    sort(class, i);
+    printf(
+            "%-10s %-25s %8s %8s %8s %8s %8s\\n",
+            "氏名",
+            "ふりがな",
+            "国語",
+            "算数",
+            "理科",
+            "社会",
+            "合計"
+    );
+
+    j = 0;
+    while (j < i) {
+        printf(
+                "%-10s %-30s %6d %6d %6d %6d %6d\\n",
+                class[j].name,
+                class[j].furi,
+                class[j].koku,
+                class[j].san,
+                class[j].rika,
+                class[j].shakai,
+                class[j].total
+        );
+        j++;
+    }
+    return 0;
+}`,
+};

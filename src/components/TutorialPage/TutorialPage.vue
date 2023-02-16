@@ -22,7 +22,7 @@ const codes = ref<readonly SourceCodeData[]>([]);
 <template>
   <div class="tutorial-page">
     <header class="header">
-      <h1 class="title">{{ page.repositoryName }}</h1>
+      <h1 class="title">{{ page.repositoryTitle }}</h1>
     </header>
     <div class="content-container">
       <div class="commits-container">
